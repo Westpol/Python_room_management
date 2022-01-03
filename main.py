@@ -1,6 +1,5 @@
 import pygame
 import time
-import pyexit
 
 
 loginSize = 30
@@ -25,13 +24,19 @@ unameButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - (
 passwdButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - (9 / 2 * loginSize) + 150 - (40 - 34) / 2, 290, 30)
 
 
+def writeData(passw, unamee):
+    text.render_to(screen, ((width / 2 - (16 / 2 * loginSize) + 130) + 30, height / 2 - (9 / 2 * loginSize) + 100 + 3), unamee, (0, 0, 0))
+
+
 def detectInput(even):
     global uname, passwd
     if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB) and typingUname:
-        uname += even.unicode
+        if ord(even.unicode) == 8:
+            uname = uname[0:len(uname)-1]
+        else:
+            uname += even.unicode
     if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB) and typingPasswd:
         passwd += even.unicode
-        print(passwd)
 
 
 
@@ -108,6 +113,8 @@ while 1:
     else:
         pygame.draw.rect(screen, (255, 255, 255), (width / 2 - 48, height / 2 + 67, 96, 36), border_radius=3)
     text.render_to(screen, (width / 2 - text.get_rect("Login")[2]/2, height / 2 + 67 + text.get_rect("Login")[1]/2), "Login",  (0, 0, 0))
+
+    writeData(passwd, uname)
 
     pygame.display.flip()
     screen.fill((0, 0, 0))
