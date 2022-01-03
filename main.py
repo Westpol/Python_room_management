@@ -30,12 +30,12 @@ def writeData(passw, unamee):
 
 def detectInput(even):
     global uname, passwd
-    if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB) and typingUname:
+    if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB or even.key == pygame.K_LSHIFT or even.key == pygame.K_RSHIFT) and typingUname:
         if ord(even.unicode) == 8:
             uname = uname[0:len(uname)-1]
         else:
             uname += even.unicode
-    if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB) and typingPasswd:
+    if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB or even.key == pygame.K_LSHIFT or even.key == pygame.K_RSHIFT) and typingPasswd:
         passwd += even.unicode
 
 
