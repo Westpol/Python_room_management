@@ -25,14 +25,6 @@ unameButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - (
 passwdButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - (9 / 2 * loginSize) + 150 - (40 - 34) / 2, 290, 30)
 
 
-def unameInput(isDoing):
-    pass
-
-
-def passwdInput(isDoing):
-    pass
-
-
 def detectInput(even):
     global uname, passwd
     if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB) and typingUname:
@@ -45,9 +37,6 @@ def detectInput(even):
 
 while 1:
     mousePos = pygame.mouse.get_pos()
-
-    passwdInput(typingPasswd)
-    unameInput(typingUname)
 
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
