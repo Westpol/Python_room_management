@@ -26,6 +26,7 @@ passwdButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - 
 
 def writeData(passw, unamee):
     text.render_to(screen, ((width / 2 - (16 / 2 * loginSize) + 130) + 30, height / 2 - (9 / 2 * loginSize) + 100 + 3), unamee, (0, 0, 0))
+    text.render_to(screen, ((width / 2 - (16 / 2 * loginSize) + 130) + 30, height / 2 - (9 / 2 * loginSize) + 150 + 3), passw, (0, 0, 0))
 
 
 def detectInput(even):
@@ -36,8 +37,36 @@ def detectInput(even):
         else:
             uname += even.unicode
     if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB or even.key == pygame.K_LSHIFT or even.key == pygame.K_RSHIFT) and typingPasswd:
-        passwd += even.unicode
+        if ord(even.unicode) == 8:
+            passwd = passwd[0:len(passwd)-1]
+        else:
+            passwd += even.unicode
 
+
+def updown(ud):
+    global typingUname, typingPasswd, overLogin
+    if ud == "down":
+        if typingUname:
+            typingUname = False
+            typingPasswd = True
+        elif typingPasswd:
+            typingPasswd = False
+            overLogin = True
+        elif overLogin:
+            overLogin = False
+            typingUname = True
+    elif ud == "up":
+        if typingUname:
+            typingUname = False
+            overLogin = True
+        elif typingPasswd:
+            typingPasswd = False
+            typingUname = True
+        elif overLogin:
+            overLogin = False
+            typingPasswd = True
+    else:
+        raise NameError('input of updown is not "up" or "down"')
 
 
 while 1:
@@ -48,26 +77,12 @@ while 1:
             detectInput(event)
             if event.key == pygame.K_ESCAPE:
                 exit()
+
             if event.key == pygame.K_TAB and event.mod & pygame.KMOD_SHIFT:
-                if typingUname:
-                    typingUname = False
-                    overLogin = True
-                elif typingPasswd:
-                    typingPasswd = False
-                    typingUname = True
-                elif overLogin:
-                    overLogin = False
-                    typingPasswd = True
+                updown("up")
             elif event.key == pygame.K_TAB:
-                if typingUname:
-                    typingUname = False
-                    typingPasswd = True
-                elif typingPasswd:
-                    typingPasswd = False
-                    overLogin = True
-                elif overLogin:
-                    overLogin = False
-                    typingUname = True
+                updown("down")
+
         if event.type == pygame.MOUSEBUTTONDOWN:
             if loginButton.collidepoint(mousePos):
                 exit()
