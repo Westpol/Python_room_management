@@ -1,3 +1,3 @@
+x = 3
 
-if not (False or False or False) and False:
-    print("wut")
+print((2, 3, 5) in x)

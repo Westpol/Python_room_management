@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1eeda6af-81bd-44b3-ac85-fb4ac59969d1" name="Changes" comment="Fixed Chash while pressing shift.">
-      <change beforePath="$PROJECT_DIR$/.idea/Python_room_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python_room_management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1eeda6af-81bd-44b3-ac85-fb4ac59969d1" name="Changes" comment="added tab up/down function, solved backspace adding squares and added password output.">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing/imtalkinginabsolutes,nobutsifsandwhens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testing/imtalkinginabsolutes,nobutsifsandwhens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,9 +27,30 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="imtalkinginabsolutes,nobutsifsandwhens" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python_room_management" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Testing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testing/imtalkinginabsolutes,nobutsifsandwhens.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_room_management" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -54,6 +75,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.imtalkinginabsolutes,nobutsifsandwhens" />
       </list>
     </recent_temporary>
   </component>
@@ -87,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641251987511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added tab up/down function, solved backspace adding squares and added password output.">
+      <created>1641294124427</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641294124427</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +134,7 @@
     <MESSAGE value="Clearing unused functions and the code in general." />
     <MESSAGE value="Half working uname output (for god's sake DON'T use shift, please)" />
     <MESSAGE value="Fixed Chash while pressing shift." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Chash while pressing shift." />
+    <MESSAGE value="added tab up/down function, solved backspace adding squares and added password output." />
+    <option name="LAST_COMMIT_MESSAGE" value="added tab up/down function, solved backspace adding squares and added password output." />
   </component>
 </project>

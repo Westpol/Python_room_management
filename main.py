@@ -7,11 +7,12 @@ triangleSize = 50   # length of each side
 fps = 75
 pos = 0
 secondsPerTriangle = 3
-typingUname = False
+typingUname = True
 typingPasswd = False
 overLogin = False
 uname = ""
 passwd = ""
+asterics = True
 
 pygame.init()
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -26,17 +27,22 @@ passwdButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - 
 
 def writeData(passw, unamee):
     text.render_to(screen, ((width / 2 - (16 / 2 * loginSize) + 130) + 30, height / 2 - (9 / 2 * loginSize) + 100 + 3), unamee, (0, 0, 0))
-    text.render_to(screen, ((width / 2 - (16 / 2 * loginSize) + 130) + 30, height / 2 - (9 / 2 * loginSize) + 150 + 3), passw, (0, 0, 0))
+    if asterics:
+        text.render_to(screen, ((width / 2 - (16 / 2 * loginSize) + 130) + 30, height / 2 - (9 / 2 * loginSize) + 150 + 3), "*"*len(passw), (0, 0, 0))
+    else:
+        text.render_to(screen, ((width / 2 - (16 / 2 * loginSize) + 130) + 30, height / 2 - (9 / 2 * loginSize) + 150 + 3), passw, (0, 0, 0))
 
 
 def detectInput(even):
     global uname, passwd
-    if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB or even.key == pygame.K_LSHIFT or even.key == pygame.K_RSHIFT) and typingUname:
+    unwantedKeys = (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB or even.key == pygame.K_LSHIFT or even.key == pygame.K_RSHIFT or even.key == pygame.K_CAPSLOCK or even.key == pygame.K_KP_ENTER or even.key == pygame.K_RETURN)
+    #unwantedKeys = even.key == (pygame.K_ESCAPE or pygame.K_RETURN or pygame.K_TAB or pygame.K_LSHIFT or pygame.K_RSHIFT or pygame.K_CAPSLOCK or pygame.K_KP_ENTER or pygame.K_RETURN)
+    if not unwantedKeys and typingUname:
         if ord(even.unicode) == 8:
             uname = uname[0:len(uname)-1]
         else:
             uname += even.unicode
-    if not (even.key == pygame.K_ESCAPE or even.key == pygame.K_RETURN or even.key == pygame.K_TAB or even.key == pygame.K_LSHIFT or even.key == pygame.K_RSHIFT) and typingPasswd:
+    if not unwantedKeys and typingPasswd:
         if ord(even.unicode) == 8:
             passwd = passwd[0:len(passwd)-1]
         else:
@@ -77,6 +83,12 @@ while 1:
             detectInput(event)
             if event.key == pygame.K_ESCAPE:
                 exit()
+
+            if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
+                if typingUname:
+                    updown("down")
+                elif typingPasswd:
+                    exit()
 
             if event.key == pygame.K_TAB and event.mod & pygame.KMOD_SHIFT:
                 updown("up")
