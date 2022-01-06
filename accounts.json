@@ -1,8 +1,12 @@
 {
   "users": [
     {
-      "Name": "Benno Schörmann",
+      "name": "Benno Schörmann",
       "directory": "3QM2rFxozo"
+    },
+    {
+      "name": "Marco Gedöns",
+      "directory": "UR0XsMi4k6"
     }
   ]
 }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1eeda6af-81bd-44b3-ac85-fb4ac59969d1" name="Changes" comment="Fixed Chash while pressing shift.">
-      <change afterPath="$PROJECT_DIR$/accounts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python_room_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python_room_management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1eeda6af-81bd-44b3-ac85-fb4ac59969d1" name="Changes" comment="Added accounts.json and added test directory.">
+      <change afterPath="$PROJECT_DIR$/NAS/UR0XsMi4k6/content.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +13,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -27,8 +31,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/NAS/UR0XsMi4k6" />
     <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\Github Repos\Python_room_management\NAS\UR0XsMi4k6" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="imtalkinginabsolutes,nobutsifsandwhens" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -117,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641294124427</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added accounts.json and added test directory.">
+      <created>1641501811261</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641501811261</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added accounts.json and added test directory.">
+      <created>1641501965205</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1641501965205</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +159,7 @@
     <MESSAGE value="Half working uname output (for god's sake DON'T use shift, please)" />
     <MESSAGE value="Fixed Chash while pressing shift." />
     <MESSAGE value="added tab up/down function, solved backspace adding squares and added password output." />
-    <option name="LAST_COMMIT_MESSAGE" value="added tab up/down function, solved backspace adding squares and added password output." />
+    <MESSAGE value="Added accounts.json and added test directory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added accounts.json and added test directory." />
   </component>
 </project>

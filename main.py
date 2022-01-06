@@ -1,5 +1,8 @@
 import pygame
+import json
 
+accFile = open("accounts.json", encoding='UTF-8')
+accounts = json.load(accFile)
 
 loginSize = 30
 triangleSize = 50   # length of each side
@@ -22,6 +25,21 @@ loginText = pygame.freetype.Font("arial.ttf", 35)
 loginButton = pygame.Rect(width / 2 - 48, height / 2 + 67, 96, 36)
 unameButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - (9 / 2 * loginSize) + 100 - (40 - 34) / 2, 290, 30)
 passwdButton = pygame.Rect(width / 2 - (16 / 2 * loginSize) + 155, height / 2 - (9 / 2 * loginSize) + 150 - (40 - 34) / 2, 290, 30)
+
+
+def validateUser(un, pwd):
+    global uname, passwd, overLogin, typingPasswd, typingUname
+    for goThrough in accounts["users"]:
+        if goThrough["name"] == un:
+            print("Logged In")
+            exit()
+
+    print("User not found")
+    uname = ""
+    passwd = ""
+    overLogin = False
+    typingPasswd = False
+    typingUname = True
 
 
 def writeData(passw, unamee):
@@ -86,8 +104,8 @@ while 1:
             if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                 if typingUname:
                     updown("down")
-                elif typingPasswd:
-                    exit()
+                elif typingPasswd or overLogin:
+                    validateUser(uname, passwd)
 
             if event.key == pygame.K_TAB and event.mod & pygame.KMOD_SHIFT:
                 updown("up")
@@ -96,6 +114,7 @@ while 1:
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             if loginButton.collidepoint(mousePos):
+                validateUser(uname, passwd)
                 exit()
             elif unameButton.collidepoint(mousePos):
                 typingUname = True
